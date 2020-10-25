@@ -66,5 +66,7 @@
 #include "SEEKFREE_MPU6050.h"
 #include "SEEKFREE_28LCD.h"
 
-
+//--------用户库--------
+#include "MOTOR.h"
+#include "EM.h"
 #endif

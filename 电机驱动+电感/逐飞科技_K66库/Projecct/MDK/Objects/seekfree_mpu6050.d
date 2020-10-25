@@ -49,3 +49,5 @@
 .\objects\seekfree_mpu6050.o: ..\..\Libraries\seekfree\SEEKFREE_MMA8451.h
 .\objects\seekfree_mpu6050.o: ..\..\Libraries\seekfree\SEEKFREE_MPU6050.h
 .\objects\seekfree_mpu6050.o: ..\..\Libraries\seekfree\SEEKFREE_28LCD.h
+.\objects\seekfree_mpu6050.o: ..\..\Libraries\hareware\motor\MOTOR.h
+.\objects\seekfree_mpu6050.o: ..\..\Libraries\hareware\em\EM.h

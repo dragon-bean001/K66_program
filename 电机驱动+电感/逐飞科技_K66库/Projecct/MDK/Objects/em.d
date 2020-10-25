@@ -49,3 +49,5 @@
 .\objects\em.o: ..\..\Libraries\seekfree\SEEKFREE_MMA8451.h
 .\objects\em.o: ..\..\Libraries\seekfree\SEEKFREE_MPU6050.h
 .\objects\em.o: ..\..\Libraries\seekfree\SEEKFREE_28LCD.h
+.\objects\em.o: ..\..\Libraries\hareware\motor\MOTOR.h
+.\objects\em.o: ..\..\Libraries\hareware\em\EM.h

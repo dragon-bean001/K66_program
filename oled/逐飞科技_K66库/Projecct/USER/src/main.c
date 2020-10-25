@@ -55,7 +55,7 @@ int main(void)
 	 while(1)
 	 {
 		 b= adc_once(ADC1_SE12,ADC_12bit);
-		OLED_Print_Num(16,0,b);
+		OLED_Print_Num(16,0,13);
 		 systick_delay_ms(100);
 		OLED_P6x8Str(8,6,(uint8 *)"voltage");	
 		 systick_delay_ms(100);

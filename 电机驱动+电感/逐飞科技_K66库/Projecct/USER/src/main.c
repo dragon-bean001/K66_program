@@ -43,6 +43,7 @@ MT9V032接线定义：
 
 
 uint16 dat;
+
 int main(void)
 {
     get_clk();//上电后必须运行一次这个函数，获取各个频率信息，便于后面各个模块的参数设置
@@ -50,15 +51,19 @@ int main(void)
   //相关的库函数在 MK60DN10_ftm.c 里面
 	//MK60DN共有三个FTM模块FTM0、FTM1、FTM2，每一个模块只能产生一个频率的PWM，意味着一个模块下所有的通道频率必须一致，
 	//三个模块就只能产生三种不同频率的PWM。同一个模块不同通道占空比可以不一样。
-	ftm_pwm_init(ftm3,ftm_ch1,50,1950);//初始化ftm0模块，0通道为50HZ，占空比为百分之50，默认精度为1000 引脚对应查看MK60DN10_port_cfg.h
-	ftm_pwm_init(ftm3,ftm_ch2,50,1950);
-	ftm_pwm_init(ftm3,ftm_ch3,50,1950);
-	ftm_pwm_init(ftm3,ftm_ch4,50,1950);
-	   
-	
+	Motor_init();
+	//Motor12_speed(1000,0);
+	//Motor34_speed(1000,0);
+	OLED_Init();   
+	EM_init();
 	
    while(1)
 	 {
+		 EM_get();
+		 EM_store();
+		 
+		 //systick_delay_ms(100);
+		 EM_dectect();
 		 
 	 }
  }
