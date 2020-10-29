@@ -64,7 +64,6 @@ int main(void)
 		 
 		 //systick_delay_ms(100);
 		 EM_dectect();
-		 ///shefhsdjfhsdfls;
 	 }
  }
 
