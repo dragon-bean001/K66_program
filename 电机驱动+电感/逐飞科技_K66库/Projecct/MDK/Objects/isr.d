@@ -51,4 +51,4 @@
 .\objects\isr.o: ..\..\Libraries\seekfree\SEEKFREE_28LCD.h
 .\objects\isr.o: ..\..\Libraries\hareware\motor\MOTOR.h
 .\objects\isr.o: ..\..\Libraries\hareware\em\EM.h
-.\objects\isr.o: ..\..\Libraries\hareware\key\KEY.h
+.\objects\isr.o: ..\..\Libraries\hareware\key\key.h

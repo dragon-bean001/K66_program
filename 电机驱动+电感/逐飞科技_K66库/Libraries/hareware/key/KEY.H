@@ -8,4 +8,7 @@ extern uint8 key_value_last;//上一个键值
 extern uint8 key_value;//当前键值
 
 void Key_init(void);//按键初始化
+void Key_select(void);//按键判断函数
 #endif
+
+

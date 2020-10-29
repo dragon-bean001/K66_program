@@ -56,11 +56,12 @@ int main(void)
 	//Motor34_speed(1000,0);
 	OLED_Init();   
 	EM_init();
-	
+	Key_init();
    while(1)
 	 {
 		 EM_get();
 		 EM_store();
+		 Key_select();
 		 
 		 //systick_delay_ms(100);
 		 EM_dectect();

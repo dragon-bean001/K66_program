@@ -50,4 +50,4 @@
 .\objects\key.o: ..\..\Libraries\seekfree\SEEKFREE_28LCD.h
 .\objects\key.o: ..\..\Libraries\hareware\motor\MOTOR.h
 .\objects\key.o: ..\..\Libraries\hareware\em\EM.h
-.\objects\key.o: ..\..\Libraries\hareware\key\KEY.h
+.\objects\key.o: ..\..\Libraries\hareware\key\key.h

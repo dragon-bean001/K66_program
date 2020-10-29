@@ -1,5 +1,5 @@
 #include "headfile.h"
-#include "key.h"
+
 uint8 key_interrupt_flag;//按键中断标志位
 uint8 key_value_last;//上一个键值
 uint8 key_value;//当前键值
@@ -14,6 +14,14 @@ void Key_init(void)//按键初始化
 	EnableInterrupts;									//打开总的中断开关
 
 	key_value=7;//啥都不按的情况
-	
 	key_interrupt_flag=0;//按键中断标志位，在多个文件传递
+}
+
+void Key_select(void)
+{
+	if(key_interrupt_flag==1)
+	{
+		key_interrupt_flag=0;
+		OLED_Print_Num1(60,3,key_value);
+	}
 }

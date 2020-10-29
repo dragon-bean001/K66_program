@@ -69,5 +69,5 @@
 //--------用户库--------
 #include "MOTOR.h"
 #include "EM.h"
-#include "KEY.h"
+#include "key.h"
 #endif
