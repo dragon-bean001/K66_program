@@ -62,9 +62,10 @@ int main(void)
 		 EM_get();
 		 EM_store();
 		 
-		 //systick_delay_ms(100);
+		 systick_delay_ms(100);
 		 EM_dectect();
 		 ///shefhsdjfhsdfls;
+		 //skfjsjfsjfjfsjfkjf;
 	 }
  }
 
