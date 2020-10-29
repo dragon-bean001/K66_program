@@ -10,7 +10,7 @@ uint16 EM_mid_value;
 float EM_error=0.0f;
 float EM_last_error=0.0f;
 float PWM_Direction=0;
-PID_t ELE_PID_Direction;
+PID_t ELE_PID_Direction;//电感的PID决策
 
 void EM_get()
 {
@@ -59,23 +59,24 @@ void EM_dectect()
 {
 	EM_get();
 	EM_store();
-	EM_error=(EM_left_value -EM_right_value)*100/(EM_left_value+EM_right_value);
+	EM_error=(EM_left_value -EM_right_value)*100/(EM_left_value+EM_right_value);//电感偏移误差
+	ELE_PID_Direction.KpPos=0.35;
 	PWM_Direction=PID_Direction_Pos_Neg(&ELE_PID_Direction,EM_error);
 	if(EM_left_value<EM_right_value)
 	{
-		Motor12_speed(500+PWM_Direction,0);
-		Motor34_speed(500-PWM_Direction,0);
+		Motor12_speed(1000+PWM_Direction,0);
+		Motor34_speed(1000-PWM_Direction,0);
 	}
 	
 	else if(EM_left_value>EM_right_value)
 	{
-		Motor34_speed(500+PWM_Direction,0);
-		Motor12_speed(500-PWM_Direction,0);
+		Motor34_speed(1000+PWM_Direction,0);
+		Motor12_speed(1000-PWM_Direction,0);
 	}
 	else
 	{
-		Motor34_speed(500,0);
-		Motor12_speed(500,0);
+		Motor34_speed(1000,0);
+		Motor12_speed(1000,0);
 	}
 //	if(EM_left_value<EM_right_value)
 //	{
@@ -104,9 +105,9 @@ float PID_Direction_Pos_Neg(PID_t * pid,float newE_k)
 			
 
 		pid->Kp_OUT = pid->KpPos  * newE_k ;
-		pid->Kd_OUT = pid->KdPos  * (newE_k - pid->E_k_1);
+		//pid->Kd_OUT = pid->KdPos  * (newE_k - pid->E_k_1);
 	
-	temp=pid->Kp_OUT + pid->Kd_OUT;
+	temp=pid->Kp_OUT; // + pid->Kd_OUT;
 	pid->PID_out=temp;
 
 	return temp;			
