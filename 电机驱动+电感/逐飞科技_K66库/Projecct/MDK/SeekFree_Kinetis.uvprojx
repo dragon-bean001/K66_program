@@ -808,9 +808,9 @@
               <FilePath>..\..\Libraries\hareware\motor\MOTOR.c</FilePath>
             </File>
             <File>
-              <FileName>KEY.C</FileName>
+              <FileName>KEY.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\Libraries\hareware\key\KEY.C</FilePath>
+              <FilePath>..\..\Libraries\hareware\key\KEY.c</FilePath>
             </File>
           </Files>
         </Group>
