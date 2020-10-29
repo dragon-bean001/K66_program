@@ -63,6 +63,7 @@ void EM_dectect()
 	EM_store();
 	EM_error=(EM_left_value -EM_right_value)*100/(EM_left_value+EM_right_value);//电感偏移误差
 	ELE_PID_Direction.KpPos=2;
+	ELE_PID_Direction.KdPos=1;
 	PWM_Direction=PID_Direction_Pos_Neg(&ELE_PID_Direction,EM_error);
 	if(PWM_Direction>ELE_Angle_max_out)
 	{
@@ -114,9 +115,9 @@ float PID_Direction_Pos_Neg(PID_t * pid,float newE_k)
 			
 
 		pid->Kp_OUT = pid->KpPos  * newE_k ;
-		//pid->Kd_OUT = pid->KdPos  * (newE_k - pid->E_k_1);
+		pid->Kd_OUT = pid->KdPos  * (newE_k - pid->E_k_1);	//加入D（雅静）
 	
-	temp=pid->Kp_OUT; // + pid->Kd_OUT;
+	temp=pid->Kp_OUT+ pid->Kd_OUT;	//加入D（雅静）
 	pid->PID_out=temp;
 
 	return temp;			

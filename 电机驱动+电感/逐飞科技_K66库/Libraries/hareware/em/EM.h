@@ -28,6 +28,7 @@ typedef struct
 	float PID_out;												//PIDÊä³ö
 }PID_t;
 
+extern PID_t ELE_PID_Direction;
 #define EM_left_max   50000.0f
 #define EM_right_max  50000.0f
 #define EM_mid_max 55000.0f

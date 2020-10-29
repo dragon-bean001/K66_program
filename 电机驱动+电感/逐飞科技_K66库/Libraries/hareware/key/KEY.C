@@ -23,5 +23,12 @@ void Key_select(void)
 	{
 		key_interrupt_flag=0;
 		OLED_Print_Num1(60,3,key_value);
+		switch(key_value)
+		{
+			case UP: ELE_PID_Direction.KdPos+=2;
+		}
+		
 	}
+	key_value=7;
+	
 }
