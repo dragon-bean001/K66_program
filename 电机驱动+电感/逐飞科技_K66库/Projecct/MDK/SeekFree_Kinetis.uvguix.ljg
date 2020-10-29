@@ -3723,9 +3723,9 @@
       </Doc>
       <Doc>
         <Name>..\USER\src\main.c</Name>
-        <ColumnNumber>2</ColumnNumber>
-        <TopLine>52</TopLine>
-        <CurrentLine>59</CurrentLine>
+        <ColumnNumber>8</ColumnNumber>
+        <TopLine>53</TopLine>
+        <CurrentLine>63</CurrentLine>
         <Folding>1</Folding>
         <ContractedFolders></ContractedFolders>
         <PaneID>0</PaneID>
@@ -3777,9 +3777,9 @@
       </Doc>
       <Doc>
         <Name>..\..\Libraries\hareware\em\EM.c</Name>
-        <ColumnNumber>29</ColumnNumber>
-        <TopLine>51</TopLine>
-        <CurrentLine>63</CurrentLine>
+        <ColumnNumber>27</ColumnNumber>
+        <TopLine>61</TopLine>
+        <CurrentLine>65</CurrentLine>
         <Folding>1</Folding>
         <ContractedFolders></ContractedFolders>
         <PaneID>0</PaneID>
@@ -3804,9 +3804,9 @@
       </Doc>
       <Doc>
         <Name>..\..\Libraries\hareware\motor\MOTOR.c</Name>
-        <ColumnNumber>12</ColumnNumber>
-        <TopLine>1</TopLine>
-        <CurrentLine>1</CurrentLine>
+        <ColumnNumber>0</ColumnNumber>
+        <TopLine>2</TopLine>
+        <CurrentLine>15</CurrentLine>
         <Folding>1</Folding>
         <ContractedFolders></ContractedFolders>
         <PaneID>0</PaneID>
@@ -3840,9 +3840,9 @@
       </Doc>
       <Doc>
         <Name>..\..\Libraries\seekfree\SEEKFREE_OLED.c</Name>
-        <ColumnNumber>18</ColumnNumber>
-        <TopLine>21</TopLine>
-        <CurrentLine>31</CurrentLine>
+        <ColumnNumber>0</ColumnNumber>
+        <TopLine>560</TopLine>
+        <CurrentLine>566</CurrentLine>
         <Folding>1</Folding>
         <ContractedFolders></ContractedFolders>
         <PaneID>0</PaneID>

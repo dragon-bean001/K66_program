@@ -7,6 +7,7 @@ uint16 EM_right[smoothing_num+1];
 uint16 EM_left_value;
 uint16 EM_right_value;
 uint16 EM_mid_value;
+float ELE_Angle_max_out=200;
 float EM_error=0.0f;
 float EM_last_error=0.0f;
 float PWM_Direction=0;
@@ -43,6 +44,7 @@ void EM_store()
 		 OLED_Print_Num1(5,1,EM_left_value);
 		 OLED_Print_Num1(5,3,EM_mid_value);
 		 OLED_Print_Num1(5,5,EM_right_value);
+		 OLED_Print_Num1(60,1,PWM_Direction);//x=40便可以分开了
 }
 
 void EM_init()
@@ -60,23 +62,30 @@ void EM_dectect()
 	EM_get();
 	EM_store();
 	EM_error=(EM_left_value -EM_right_value)*100/(EM_left_value+EM_right_value);//电感偏移误差
-	ELE_PID_Direction.KpPos=0.35;
+	ELE_PID_Direction.KpPos=2;
 	PWM_Direction=PID_Direction_Pos_Neg(&ELE_PID_Direction,EM_error);
-	if(EM_left_value<EM_right_value)
+	if(PWM_Direction>ELE_Angle_max_out)
 	{
-		Motor12_speed(1000+PWM_Direction,0);
-		Motor34_speed(1000-PWM_Direction,0);
+		PWM_Direction=ELE_Angle_max_out;
+	}
+	else
+		if(PWM_Direction<-ELE_Angle_max_out)
+			PWM_Direction=-ELE_Angle_max_out;
+	if(EM_left_value<EM_right_value&&PWM_Direction<-50)//左偏，PWM_Direction小于0
+	{
+		Motor12_speed(1500-PWM_Direction,0);
+		Motor34_speed(0,1500+PWM_Direction);
 	}
 	
-	else if(EM_left_value>EM_right_value)
+	else if(EM_left_value>EM_right_value&&PWM_Direction>50)//右偏，PWM_Direction大于0
 	{
-		Motor34_speed(1000+PWM_Direction,0);
-		Motor12_speed(1000-PWM_Direction,0);
+		Motor34_speed(1500+PWM_Direction,0);
+		Motor12_speed(0,1500-PWM_Direction);
 	}
 	else
 	{
-		Motor34_speed(1000,0);
-		Motor12_speed(1000,0);
+		Motor34_speed(1500,0);
+		Motor12_speed(1500,0);
 	}
 //	if(EM_left_value<EM_right_value)
 //	{
