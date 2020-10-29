@@ -51,3 +51,4 @@
 .\objects\seekfree_oled.o: ..\..\Libraries\seekfree\SEEKFREE_28LCD.h
 .\objects\seekfree_oled.o: ..\..\Libraries\hareware\motor\MOTOR.h
 .\objects\seekfree_oled.o: ..\..\Libraries\hareware\em\EM.h
+.\objects\seekfree_oled.o: ..\..\Libraries\hareware\key\KEY.h

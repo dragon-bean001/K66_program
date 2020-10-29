@@ -40,6 +40,29 @@ void PORTA_IRQHandler(void)
 
 }
 
+void PORTD_IRQHandler(void)
+{
+		
+    //清除中断标志第一种方法直接操作寄存器，每一位对应一个引脚
+	PORTD->ISFR = 0xffffffff;
+	//使用我们编写的宏定义清除发生中断的引脚
+	//PORTA_FLAG_CLR(A1);
+	key_value_last=Key_value;
+	Key_value=get_key;//获取按键值
+	if(key_value_last!=Key_value)
+	{
+		Key_interrupt_flag=1;
+	}
+	Get_Mode();
+	//MODE_init();
+	if(Key_value==KEY1)
+	{
+		Car_Mode=Support_Mode;
+	}
+}
+
+}
+
 
 void PORTC_IRQHandler(void)
 {

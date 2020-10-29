@@ -51,3 +51,4 @@
 .\objects\seekfree_l3g4200d.o: ..\..\Libraries\seekfree\SEEKFREE_28LCD.h
 .\objects\seekfree_l3g4200d.o: ..\..\Libraries\hareware\motor\MOTOR.h
 .\objects\seekfree_l3g4200d.o: ..\..\Libraries\hareware\em\EM.h
+.\objects\seekfree_l3g4200d.o: ..\..\Libraries\hareware\key\KEY.h

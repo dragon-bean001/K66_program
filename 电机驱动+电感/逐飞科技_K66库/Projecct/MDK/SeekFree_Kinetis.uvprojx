@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\USER\inc;..\USER\src;..\..\Libraries\startup\CoreSupport;..\..\Libraries\startup\DeviceSupport\MDK-ARM;..\..\Libraries\startup\DeviceSupport;..\..\Libraries\drives\inc;..\..\Libraries\drives\src;..\..\Libraries\seekfree;..\..\Libraries\FatFs;..\..\Libraries\FatFs\option;..\..\Libraries\hareware\em;..\..\Libraries\hareware\motor</IncludePath>
+              <IncludePath>..\USER\inc;..\USER\src;..\..\Libraries\startup\CoreSupport;..\..\Libraries\startup\DeviceSupport\MDK-ARM;..\..\Libraries\startup\DeviceSupport;..\..\Libraries\drives\inc;..\..\Libraries\drives\src;..\..\Libraries\seekfree;..\..\Libraries\FatFs;..\..\Libraries\FatFs\option;..\..\Libraries\hareware\em;..\..\Libraries\hareware\motor;..\..\Libraries\hareware\key</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -806,6 +806,11 @@
               <FileName>MOTOR.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Libraries\hareware\motor\MOTOR.c</FilePath>
+            </File>
+            <File>
+              <FileName>KEY.C</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\hareware\key\KEY.C</FilePath>
             </File>
           </Files>
         </Group>

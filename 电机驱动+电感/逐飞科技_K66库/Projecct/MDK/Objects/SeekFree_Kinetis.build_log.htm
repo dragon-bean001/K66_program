@@ -22,15 +22,170 @@ Dialog DLL:      TCM.DLL V1.36.2.0
  
 <h2>Project:</h2>
 D:\K60芯片资料\K66资料\1.逐飞科技_K66库V2.06\桔梗的K60例程\电机驱动+电感\逐飞科技_K66库\Projecct\MDK\SeekFree_Kinetis.uvprojx
-Project File Date:  10/22/2020
+Project File Date:  10/29/2020
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\MDK5\ARM\ARMCC\Bin'
 Build target 'SeekFree_MK66FX'
+compiling MK60_adc.c...
+compiling misc.c...
+compiling MK60_cmt.c...
+compiling MK60_dma.c...
+compiling system_MK66.c...
+compiling common.c...
+compiling MK60_dac.c...
+compiling MK60_flash.c...
+compiling MK60_ftm.c...
+compiling MK60_lptmr.c...
+compiling MK60_pit.c...
+compiling MK60_port.c...
+compiling MK60_gpio.c...
+compiling MK60_i2c.c...
+compiling MK60_sdhc.c...
+compiling MK60_rtc.c...
+compiling MK60_spi.c...
+compiling MK60_uart.c...
+compiling MK60_systick.c...
+compiling MK60_wdog.c...
+compiling SEEKFREE_18TFT.c...
+..\..\Libraries\hareware\key\KEY.h(6): error:  #20: identifier "u8" is undefined
+  u8 key_value_last;
+..\..\Libraries\hareware\key\KEY.h(7): error:  #20: identifier "u8" is undefined
+  u8 key_value;
+..\..\Libraries\hareware\key\KEY.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\..\Libraries\seekfree\SEEKFREE_18TFT.c: 1 warning, 2 errors
+compiling isr.c...
+..\..\Libraries\hareware\key\KEY.h(6): error:  #20: identifier "u8" is undefined
+  u8 key_value_last;
+..\..\Libraries\hareware\key\KEY.h(7): error:  #20: identifier "u8" is undefined
+  u8 key_value;
+..\..\Libraries\hareware\key\KEY.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\USER\src\isr.c(50): error:  #20: identifier "Key_value" is undefined
+  	key_value_last=Key_value;
+..\USER\src\isr.c(54): error:  #20: identifier "Key_interrupt_flag" is undefined
+  		Key_interrupt_flag=1;
+..\USER\src\isr.c(56): warning:  #223-D: function "Get_Mode" declared implicitly
+  	Get_Mode();
+..\USER\src\isr.c(58): error:  #20: identifier "KEY1" is undefined
+  	if(Key_value==KEY1)
+..\USER\src\isr.c(60): error:  #20: identifier "Car_Mode" is undefined
+  		Car_Mode=Support_Mode;
+..\USER\src\isr.c(60): error:  #20: identifier "Support_Mode" is undefined
+  		Car_Mode=Support_Mode;
+..\USER\src\isr.c(64): error:  #169: expected a declaration
+  }
+..\USER\src\isr.c(234): warning: At end of source:  #12-D: parsing restarts here after previous syntax error
+..\USER\src\isr.c: 3 warnings, 8 errors
+compiling main.c...
+..\..\Libraries\hareware\key\KEY.h(6): error:  #20: identifier "u8" is undefined
+  u8 key_value_last;
+..\..\Libraries\hareware\key\KEY.h(7): error:  #20: identifier "u8" is undefined
+  u8 key_value;
+..\..\Libraries\hareware\key\KEY.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\USER\src\main.c: 1 warning, 2 errors
+compiling SEEKFREE_7725.c...
+..\..\Libraries\hareware\key\KEY.h(6): error:  #20: identifier "u8" is undefined
+  u8 key_value_last;
+..\..\Libraries\hareware\key\KEY.h(7): error:  #20: identifier "u8" is undefined
+  u8 key_value;
+..\..\Libraries\hareware\key\KEY.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\..\Libraries\seekfree\SEEKFREE_7725.c: 1 warning, 2 errors
+compiling SEEKFREE_FUN.c...
+..\..\Libraries\hareware\key\KEY.h(6): error:  #20: identifier "u8" is undefined
+  u8 key_value_last;
+..\..\Libraries\hareware\key\KEY.h(7): error:  #20: identifier "u8" is undefined
+  u8 key_value;
+..\..\Libraries\hareware\key\KEY.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\..\Libraries\seekfree\SEEKFREE_FUN.c: 1 warning, 2 errors
+compiling SEEKFREE_IIC.c...
+..\..\Libraries\hareware\key\KEY.h(6): error:  #20: identifier "u8" is undefined
+  u8 key_value_last;
+..\..\Libraries\hareware\key\KEY.h(7): error:  #20: identifier "u8" is undefined
+  u8 key_value;
+..\..\Libraries\hareware\key\KEY.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\..\Libraries\seekfree\SEEKFREE_IIC.c: 1 warning, 2 errors
+compiling SEEKFREE_L3G4200D.c...
+..\..\Libraries\hareware\key\KEY.h(6): error:  #20: identifier "u8" is undefined
+  u8 key_value_last;
+..\..\Libraries\hareware\key\KEY.h(7): error:  #20: identifier "u8" is undefined
+  u8 key_value;
+..\..\Libraries\hareware\key\KEY.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\..\Libraries\seekfree\SEEKFREE_L3G4200D.c: 1 warning, 2 errors
+compiling SEEKFREE_MMA8451.c...
+..\..\Libraries\hareware\key\KEY.h(6): error:  #20: identifier "u8" is undefined
+  u8 key_value_last;
+..\..\Libraries\hareware\key\KEY.h(7): error:  #20: identifier "u8" is undefined
+  u8 key_value;
+..\..\Libraries\hareware\key\KEY.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\..\Libraries\seekfree\SEEKFREE_MMA8451.c: 1 warning, 2 errors
+compiling ff.c...
+compiling SEEKFREE_NRF24L01.c...
+..\..\Libraries\hareware\key\KEY.h(6): error:  #20: identifier "u8" is undefined
+  u8 key_value_last;
+..\..\Libraries\hareware\key\KEY.h(7): error:  #20: identifier "u8" is undefined
+  u8 key_value;
+..\..\Libraries\hareware\key\KEY.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\..\Libraries\seekfree\SEEKFREE_NRF24L01.c: 1 warning, 2 errors
+compiling KEY.C...
+compiling SEEKFREE_MPU6050.c...
+..\..\Libraries\hareware\key\KEY.h(6): error:  #20: identifier "u8" is undefined
+  u8 key_value_last;
+..\..\Libraries\hareware\key\KEY.h(7): error:  #20: identifier "u8" is undefined
+  u8 key_value;
+..\..\Libraries\hareware\key\KEY.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\..\Libraries\seekfree\SEEKFREE_MPU6050.c: 1 warning, 2 errors
+compiling SEEKFREE_MT9V032.c...
+..\..\Libraries\hareware\key\KEY.h(6): error:  #20: identifier "u8" is undefined
+  u8 key_value_last;
+..\..\Libraries\hareware\key\KEY.h(7): error:  #20: identifier "u8" is undefined
+  u8 key_value;
+..\..\Libraries\hareware\key\KEY.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\..\Libraries\seekfree\SEEKFREE_MT9V032.c: 1 warning, 2 errors
+compiling SEEKFREE_OLED.c...
+..\..\Libraries\hareware\key\KEY.h(6): error:  #20: identifier "u8" is undefined
+  u8 key_value_last;
+..\..\Libraries\hareware\key\KEY.h(7): error:  #20: identifier "u8" is undefined
+  u8 key_value;
+..\..\Libraries\hareware\key\KEY.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\..\Libraries\seekfree\SEEKFREE_OLED.c: 1 warning, 2 errors
+compiling diskio.c...
+compiling SEEKFREE_TSL1401.c...
+..\..\Libraries\hareware\key\KEY.h(6): error:  #20: identifier "u8" is undefined
+  u8 key_value_last;
+..\..\Libraries\hareware\key\KEY.h(7): error:  #20: identifier "u8" is undefined
+  u8 key_value;
+..\..\Libraries\hareware\key\KEY.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\..\Libraries\seekfree\SEEKFREE_TSL1401.c: 1 warning, 2 errors
+compiling MOTOR.c...
+..\..\Libraries\hareware\key\KEY.h(6): error:  #20: identifier "u8" is undefined
+  u8 key_value_last;
+..\..\Libraries\hareware\key\KEY.h(7): error:  #20: identifier "u8" is undefined
+  u8 key_value;
+..\..\Libraries\hareware\key\KEY.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\..\Libraries\hareware\motor\MOTOR.c: 1 warning, 2 errors
 compiling EM.c...
-linking...
-Program Size: Code=5400 RO-data=3232 RW-data=144 ZI-data=23680  
-".\Objects\SeekFree_Kinetis.axf" - 0 Error(s), 0 Warning(s).
+..\..\Libraries\hareware\key\KEY.h(6): error:  #20: identifier "u8" is undefined
+  u8 key_value_last;
+..\..\Libraries\hareware\key\KEY.h(7): error:  #20: identifier "u8" is undefined
+  u8 key_value;
+..\..\Libraries\hareware\key\KEY.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\..\Libraries\hareware\em\EM.c: 1 warning, 2 errors
+".\Objects\SeekFree_Kinetis.axf" - 36 Error(s), 17 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -44,7 +199,8 @@ Package Vendor: Keil
   D:\MDK5\Keil\Kinetis_K60_DFP\1.4.0\Device\Include
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:03
+Target not created.
+Build Time Elapsed:  00:00:36
 </pre>
 </body>
 </html>
