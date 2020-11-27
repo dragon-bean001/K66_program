@@ -371,7 +371,7 @@ void OLED_Fill(uint8 bmp_data)
 //-------------------------------------------------------------------------------------------------------------------
 void OLED_Init(void)
 {
-	gpio_init (OLED_SCL_PIN, GPO,1);
+    gpio_init (OLED_SCL_PIN, GPO,1);
     gpio_init (OLED_SDA_PIN, GPO,0);
     gpio_init (OLED_RST_PIN, GPO,1);
     gpio_init (OLED_DC_PIN , GPO,1);
@@ -577,6 +577,21 @@ void OLED_Print_Num1(uint8 x, uint8 y, int16 num)
 		x += 6;
 		ch1++;
 	}
+}
+//-------------------------------------------------------------------------------------------------------------------
+//  @brief      OLED显示浮点数(8*16字体)
+//  @param      x			x轴坐标设置
+//  @param      y           y轴坐标设置
+//  @param      num         浮点数
+//  @return     void
+//  @since      v1.0
+//  Sample usage:			
+//-------------------------------------------------------------------------------------------------------------------
+void OLED_Print_float(uint8 x, uint8 y, float num)
+{
+	uint8 ch[]={0};
+	sprintf((char*)ch,"%f",num);
+	OLED_P6x8Str(x,y,ch);
 }
 
 //-------------------------------------------------------------------------------------------------------------------

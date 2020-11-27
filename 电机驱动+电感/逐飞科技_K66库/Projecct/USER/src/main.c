@@ -52,11 +52,11 @@ int main(void)
 	//MK60DN共有三个FTM模块FTM0、FTM1、FTM2，每一个模块只能产生一个频率的PWM，意味着一个模块下所有的通道频率必须一致，
 	//三个模块就只能产生三种不同频率的PWM。同一个模块不同通道占空比可以不一样。
 	Motor_init();
-	//Motor12_speed(1000,0);
-	//Motor34_speed(1000,0);
 	OLED_Init();   
 	EM_init();
 	Key_init();
+	ELE_PID_Direction.KpPos=2.0f;
+	ELE_PID_Direction.KdPos=1.0f;
    while(1)
 	 {
 		 EM_get();

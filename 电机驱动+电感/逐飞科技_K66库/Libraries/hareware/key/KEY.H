@@ -2,12 +2,12 @@
 #define _KEY_H
 #include "headfile.h"
 #define get_key  gpio_get(D1)*2+gpio_get(D0)*1+gpio_get(D2)*4   //获取按键情况
-#define UP    				4   //按键值，7是没有按下任何键，也就是三个引脚都为高电平
-#define DOWN   				6
-#define RIGHT   			2
-#define LEFT    			5
-#define MID   				1
-#define KEY1  				0 
+#define UP    				2   //按键值，7是没有按下任何键，也就是三个引脚都为高电平
+#define DOWN   				6		//			*************
+#define RIGHT   			4   //			*						*					  up
+#define LEFT    			5		//			*	  oled  	*    left  mid  right
+#define MID   				1		//      *						*					 down
+#define KEY1  				0   //			*************
 #define KEY2  				3  //key3其实是无效的
 #define NONE				7
 extern uint8 key_interrupt_flag;//按键中断标志位

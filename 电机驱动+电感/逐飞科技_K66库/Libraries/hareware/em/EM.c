@@ -45,6 +45,8 @@ void EM_store()
 		 OLED_Print_Num1(5,3,EM_mid_value);
 		 OLED_Print_Num1(5,5,EM_right_value);
 		 OLED_Print_Num1(60,1,PWM_Direction);//x=40便可以分开了
+		 OLED_Print_float(60,5,ELE_PID_Direction.KpPos);
+	   OLED_Print_float(60,7,ELE_PID_Direction.KdPos); 
 }
 
 void EM_init()
@@ -62,8 +64,6 @@ void EM_dectect()
 	EM_get();
 	EM_store();
 	EM_error=(EM_left_value -EM_right_value)*100/(EM_left_value+EM_right_value);//电感偏移误差
-	ELE_PID_Direction.KpPos=2;
-	ELE_PID_Direction.KdPos=1;
 	PWM_Direction=PID_Direction_Pos_Neg(&ELE_PID_Direction,EM_error);
 	if(PWM_Direction>ELE_Angle_max_out)
 	{
@@ -88,23 +88,7 @@ void EM_dectect()
 		Motor34_speed(1500,0);
 		Motor12_speed(1500,0);
 	}
-//	if(EM_left_value<EM_right_value)
-//	{
-//		Motor12_speed(1000,0);
-//		Motor34_speed(300,0);
-//	}
-//	
-//	else if(EM_left_value>EM_right_value)
-//	{
-//		Motor34_speed(1000,0);
-//		Motor12_speed(300,0);
-//	}
-//	else
-//	{
-//		Motor34_speed(1000,0);
-//		Motor12_speed(1000,0);
-//	}
-		
+
 }
 	
 float PID_Direction_Pos_Neg(PID_t * pid,float newE_k)
@@ -114,8 +98,8 @@ float PID_Direction_Pos_Neg(PID_t * pid,float newE_k)
 	pid->E_k = newE_k;
 			
 
-		pid->Kp_OUT = pid->KpPos  * newE_k ;
-		pid->Kd_OUT = pid->KdPos  * (newE_k - pid->E_k_1);	//加入D（雅静）
+	pid->Kp_OUT = pid->KpPos  * newE_k ;
+	pid->Kd_OUT = pid->KdPos  * (newE_k - pid->E_k_1);	//加入D（雅静）
 	
 	temp=pid->Kp_OUT+ pid->Kd_OUT;	//加入D（雅静）
 	pid->PID_out=temp;

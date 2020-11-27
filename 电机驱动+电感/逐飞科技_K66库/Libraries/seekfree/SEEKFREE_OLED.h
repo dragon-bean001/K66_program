@@ -57,7 +57,7 @@ void OLED_HEXACSII(uint16 hex,uint8* Print);
 void OLED_Print_Num(uint8 x, uint8 y, uint16 num);
 void OLED_Print_Num1(uint8 x, uint8 y, int16 num);
 void dis_bmp(uint16 high, uint16 width, uint8 *p,uint8 value);
-
+void OLED_Print_float(uint8 x, uint8 y, float num);//新增加的显示float的函数
 
 
 /********************************************************************/

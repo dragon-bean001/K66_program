@@ -52,7 +52,6 @@ void PORTD_IRQHandler(void)
 	if(key_value_last!=key_value)
 	{
 		key_interrupt_flag=1;
-		
 	}
 	
 }
