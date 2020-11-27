@@ -12,7 +12,7 @@ float EM_error=0.0f;
 float EM_last_error=0.0f;
 float PWM_Direction=0;
 PID_t ELE_PID_Direction;//电感的PID决策
-
+#define INIT_SPEED 1800
 void EM_get()
 {
 	EM_right[smoothing_num] =adc_once(ADC1_SE12, ADC_16bit);  //右
@@ -72,21 +72,31 @@ void EM_dectect()
 	else
 		if(PWM_Direction<-ELE_Angle_max_out)
 			PWM_Direction=-ELE_Angle_max_out;
-	if(EM_left_value<EM_right_value&&PWM_Direction<-50)//左偏，PWM_Direction小于0
+	if(EM_left_value<EM_right_value&&PWM_Direction<-50)//左大偏，PWM_Direction小于0
 	{
-		Motor12_speed(1500-PWM_Direction,0);
-		Motor34_speed(0,1500+PWM_Direction);
+		Motor12_speed(INIT_SPEED-PWM_Direction,0);//因为PWM_Direction是有正负号的，应该考虑符号问题
+		Motor34_speed(0,INIT_SPEED+PWM_Direction);//反向差速
 	}
 	
-	else if(EM_left_value>EM_right_value&&PWM_Direction>50)//右偏，PWM_Direction大于0
+	else if(EM_left_value>EM_right_value&&PWM_Direction>50)//右大偏，PWM_Direction大于0
 	{
-		Motor34_speed(1500+PWM_Direction,0);
-		Motor12_speed(0,1500-PWM_Direction);
+		Motor34_speed(INIT_SPEED+PWM_Direction,0);//反向差速
+		Motor12_speed(0,INIT_SPEED-PWM_Direction);
+	}
+	else if(PWM_Direction>0 && PWM_Direction<50)//右小偏
+	{
+		Motor34_speed(INIT_SPEED+2*PWM_Direction,0);//同向差速
+		Motor12_speed(INIT_SPEED-2*PWM_Direction,0);
+	}
+	else if(PWM_Direction<0 && PWM_Direction>-50)//左小偏
+	{
+		Motor34_speed(INIT_SPEED-2*PWM_Direction,0);//同向差速
+		Motor12_speed(INIT_SPEED+2*PWM_Direction,0);
 	}
 	else
 	{
-		Motor34_speed(1500,0);
-		Motor12_speed(1500,0);
+		Motor34_speed(INIT_SPEED,0);
+		Motor12_speed(INIT_SPEED,0);
 	}
 
 }
