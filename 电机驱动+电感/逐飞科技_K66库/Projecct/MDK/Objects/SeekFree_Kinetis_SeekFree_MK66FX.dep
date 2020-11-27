@@ -1034,7 +1034,7 @@ I (D:\MDK5\ARM\ARMCC\include\stdarg.h)(0x5CEB79E4)
 F (..\..\Libraries\FatFs\ff.h)(0x51000AA2)()
 F (..\..\Libraries\FatFs\ffconf.h)(0x578DDD9A)()
 F (..\..\Libraries\FatFs\integer.h)(0x4BD31212)()
-F (..\..\Libraries\hareware\em\EM.c)(0x5FC0C4B6)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections --signed_chars -I ..\USER\inc -I ..\USER\src -I ..\..\Libraries\startup\CoreSupport -I ..\..\Libraries\startup\DeviceSupport\MDK-ARM -I ..\..\Libraries\startup\DeviceSupport -I ..\..\Libraries\drives\inc -I ..\..\Libraries\drives\src -I ..\..\Libraries\seekfree -I ..\..\Libraries\FatFs -I ..\..\Libraries\FatFs\option -I ..\..\Libraries\hareware\em -I ..\..\Libraries\hareware\motor -I ..\..\Libraries\hareware\key -I ..\..\Libraries\hareware\key -D__UVISION_VERSION="528" -DMK66FX1M0xxx18-o .\objects\em.o --omf_browse .\objects\em.crf --depend .\objects\em.d)
+F (..\..\Libraries\hareware\em\EM.c)(0x5FC0F406)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections --signed_chars -I ..\USER\inc -I ..\USER\src -I ..\..\Libraries\startup\CoreSupport -I ..\..\Libraries\startup\DeviceSupport\MDK-ARM -I ..\..\Libraries\startup\DeviceSupport -I ..\..\Libraries\drives\inc -I ..\..\Libraries\drives\src -I ..\..\Libraries\seekfree -I ..\..\Libraries\FatFs -I ..\..\Libraries\FatFs\option -I ..\..\Libraries\hareware\em -I ..\..\Libraries\hareware\motor -I ..\..\Libraries\hareware\key -I ..\..\Libraries\hareware\key -D__UVISION_VERSION="528" -DMK66FX1M0xxx18-o .\objects\em.o --omf_browse .\objects\em.crf --depend .\objects\em.d)
 I (..\..\Libraries\hareware\em\EM.h)(0x5F9AC93D)
 I (..\..\Libraries\drives\inc\headfile.h)(0x5F9AC410)
 I (..\..\Libraries\drives\inc\MK60_port_cfg.h)(0x5AD81292)
