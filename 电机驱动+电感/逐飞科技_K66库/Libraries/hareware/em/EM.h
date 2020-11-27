@@ -38,7 +38,7 @@ void EM_store(void);
 void EM_get(void);
 void EM_dectect(void);
 float PID_Direction_Pos_Neg(PID_t * pid,float newE_k);
-
+void Round_Detect(void);
 
 #endif
 

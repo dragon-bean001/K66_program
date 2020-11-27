@@ -12,7 +12,10 @@ float EM_error=0.0f;
 float EM_last_error=0.0f;
 float PWM_Direction=0;
 PID_t ELE_PID_Direction;//电感的PID决策
-#define INIT_SPEED 1700
+#define STRAIGHT_INIT_SPEED 1700  //直道初始速度
+#define CURVE_INIT_SPEED 1500 //直道初始速度
+uint16 g_curve_count=0;//进入环岛时的计数
+uint16 curve_flag=0;//进入圆环的标志
 void EM_get()
 {
 	EM_right[smoothing_num] =adc_once(ADC1_SE12, ADC_8bit);  //右
@@ -74,27 +77,58 @@ void EM_dectect()
 		if(PWM_Direction<-ELE_Angle_max_out)
 			PWM_Direction=-ELE_Angle_max_out;
 		
-	if(EM_left_value<EM_right_value)//PWM_Direction为负
+	if(EM_left_value<EM_right_value && PWM_Direction>-50)//PWM_Direction为负
 	{
-		Motor12_speed(INIT_SPEED-PWM_Direction,0);
-		Motor34_speed(INIT_SPEED+2*PWM_Direction,0);
+		Motor12_speed(STRAIGHT_INIT_SPEED-PWM_Direction,0);
+		Motor34_speed(STRAIGHT_INIT_SPEED+2*PWM_Direction,0);
 	}
-	else if(EM_left_value>EM_right_value)//PWM_Direction为正
+	else if(EM_left_value>EM_right_value && PWM_Direction<50)//PWM_Direction为正
 	{
-		Motor12_speed(INIT_SPEED-2*PWM_Direction,0);
-		Motor34_speed(INIT_SPEED+PWM_Direction,0);
+		Motor12_speed(STRAIGHT_INIT_SPEED-2*PWM_Direction,0);
+		Motor34_speed(STRAIGHT_INIT_SPEED+PWM_Direction,0);
 	}
+	else if(EM_left_value>EM_right_value && PWM_Direction>50)//大偏,PWM_Direction为正
+	{
+		Motor12_speed(STRAIGHT_INIT_SPEED-3.5*PWM_Direction,0);
+		Motor34_speed(STRAIGHT_INIT_SPEED+PWM_Direction,0);
+	}
+	else if(EM_left_value<EM_right_value && PWM_Direction<-50)//大偏,PWM_Direction为正
+	{
+		Motor12_speed(STRAIGHT_INIT_SPEED-PWM_Direction,0);
+		Motor34_speed(STRAIGHT_INIT_SPEED+3.5*PWM_Direction,0);
+	}
+	
+	
 	else
 	{
-		Motor12_speed(INIT_SPEED,0);
-		Motor34_speed(INIT_SPEED,0);
+		Motor12_speed(STRAIGHT_INIT_SPEED,0);
+		Motor34_speed(STRAIGHT_INIT_SPEED,0);
+		
+	}
+}
+	
+void Round_Detect()
+{
+	if(EM_left_value>275||EM_mid_value>275||EM_right_value>275)
+	{
+		g_curve_count++;
+		if(g_curve_count>30&&g_curve_count<60)
+		{
+			Motor12_speed(STRAIGHT_INIT_SPEED+200,0);
+		  Motor34_speed(STRAIGHT_INIT_SPEED-200,0);
+			curve_flag=1;
+		}
+		else
+			curve_flag=0;
+		
 		
 	}
 	
-	
-
+		
 }
-	
+
+
+
 float PID_Direction_Pos_Neg(PID_t * pid,float newE_k)
 {
 	float temp;
